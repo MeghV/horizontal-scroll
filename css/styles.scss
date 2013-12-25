@@ -13,7 +13,7 @@ $tiles: 4;
 body {
 	font-family: sans-serif;
 	overflow: hidden;
-	@include transition(background-color, 1.2s, ease-in);
+	background-color: #3498db;
 }
 
 .wide { 
