@@ -2,8 +2,11 @@
 	var target;
 
 	$(document).ready(function() { 
-		$(document.body).fadeIn(2000);
+
 		resizeDiv($("#home"));
+		$(".panel").each(function(){
+			$(this).css("display", "block");
+		})
 		resizeDiv($("#about"));
 		resizeDiv($("#projects"));
 		resizeDiv($("#contact"));
@@ -11,16 +14,20 @@
 			event.preventDefault(); 
 			target = $(this).attr("href"); 
 			slide(setSlideTime);
-			$("body").css("background-color", "green");
+			$("body").css("background-color", "red");
 		}); 
 	}); 
 
 	this.onresize = function(event) {
+		var width = $(this).width();
+		$(".wide").css("width", width * 4 + "px");
+		console.log(width * 4);
 		resizeDiv($("#home"));
 		resizeDiv($("#about"));
 		resizeDiv($("#projects"));
 		resizeDiv($("#contact"));
-		slide(0);	}
+		slide(0);	
+	}
 
 	function resizeDiv(div) {
 		vpw = $(this).width();
