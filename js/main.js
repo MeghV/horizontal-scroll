@@ -2,7 +2,6 @@
 	var target;
 
 	$(document).ready(function() { 
-
 		resizeDiv($("#home"));
 		$(".panel").each(function(){
 			$(this).css("display", "block");
@@ -20,8 +19,8 @@
 
 	this.onresize = function(event) {
 		var width = $(this).width();
-		$(".wide").css("width", width * 4 + "px");
-		console.log(width * 4);
+		$(".wide").css("width", width * 3 + "px");
+		console.log(width * 3);
 		resizeDiv($("#home"));
 		resizeDiv($("#about"));
 		resizeDiv($("#projects"));

@@ -1,4 +1,4 @@
-$tiles: 4;
+$tiles: 3;
 
 //mixins
 
@@ -59,9 +59,6 @@ ul#banner {
 		}
 		&:nth-child(3) {
 			background-color: #e67e22;
-		}
-		&:nth-child(4) {
-			background-color: #e74c3c;
 		}
 		a {
 			padding-bottom: 25px;

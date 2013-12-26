@@ -5,11 +5,15 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <title>Horizontal Scroll Test</title>
         <meta name="description" content="">
-        <meta name="viewport" content="width=device-width,minumum-scale=1">
+        <meta id="vp" name="viewport" content="">
         <link rel="stylesheet" href="css/normalize.min.css">
         <link rel="stylesheet" href="css/main.css">
         <link rel="stylesheet" href="css/styles.css">
         <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+        <script>
+            var width = window.innerWidth / 3;
+            var tag = document.getElementById("vp").setAttribute("content", "width=" + width + ",minimum-scale=1");
+        </script>
     </head>
     <body>
 

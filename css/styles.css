@@ -40,8 +40,6 @@ ul#banner {
       background-color: #9b59b6; }
     ul#banner li:nth-child(3) {
       background-color: #e67e22; }
-    ul#banner li:nth-child(4) {
-      background-color: #e74c3c; }
     ul#banner li a {
       padding-bottom: 25px;
       display: block;
