@@ -19,7 +19,7 @@
 
 	this.onresize = function(event) {
 		var width = $(this).width();
-		$(".wide").css("width", width * 3 + "px");
+		$(".wide").css("width", width * 4 + "px");
 		console.log(width * 3);
 		resizeDiv($("#home"));
 		resizeDiv($("#about"));
