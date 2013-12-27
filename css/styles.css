@@ -29,7 +29,6 @@ ul {
   text-align: center;
   padding: 0; }
   ul a {
-    color: black;
     font-weight: 600;
     text-decoration: none;
     font-size: 1.4em; }
@@ -42,6 +41,7 @@ ul {
       display: inline;
       margin-left: 10px; }
       ul#contact-info li a {
+        color: black;
         font-size: 45px;
         margin: 0; }
         ul#contact-info li a[href^="mailto:"] {
