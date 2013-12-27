@@ -2,6 +2,8 @@
 	var target;
 
 	$(document).ready(function() { 
+		$("#hi").fadeIn(10000);
+		slideChoice();
 		resizeDiv($("#home"));
 		$(".panel").each(function(){
 			$(this).css("display", "block");
@@ -20,7 +22,7 @@
 	this.onresize = function(event) {
 		var width = $(this).width();
 		$(".wide").css("width", width * 4 + "px");
-		console.log(width * 3);
+		console.log(width * 4);
 		resizeDiv($("#home"));
 		resizeDiv($("#about"));
 		resizeDiv($("#projects"));
@@ -53,5 +55,26 @@
 		}
 		console.log(time);
 		return time;
+	}
+
+	function slideChoice() {
+		$("#vertical").click(function() {
+			$("li[data-choice='h'").attr({
+				"id":"unchosen"
+			});
+			$("li[data-choice='v']").attr({
+				"id":"chosen"
+			});
+			$(".panel").css("float","none");
+		});
+		$("#horizontal").click(function (){
+			$("li[data-choice='v'").attr({
+				"id":"unchosen"
+			});
+			$("li[data-choice='h']").attr({
+				"id":"chosen"
+			});
+			$(".panel").css("float", "left");
+		})
 	}
 })(this);

@@ -6,6 +6,38 @@ $color3: #e67e22;
 $color4: #e74c3c;
 //mixins
 
+@mixin animation($animate...) {
+    $max: length($animate);
+    $animations: '';
+
+    @for $i from 1 through $max {
+        $animations: #{$animations + nth($animate, $i)};
+
+        @if $i < $max {
+            $animations: #{$animations + ", "};
+        }
+    }
+    -webkit-animation: $animations;
+    -moz-animation:    $animations;
+    -o-animation:      $animations;
+    animation:         $animations;
+}
+
+@mixin keyframes($animationName) {
+    @-webkit-keyframes #{$animationName} {
+        @content;
+    }
+    @-moz-keyframes #{$animationName} {
+        @content;
+    }
+    @-o-keyframes #{$animationName} {
+        @content;
+    }
+    @keyframes #{$animationName} {
+        @content;
+    }
+}
+
 @mixin transition($transition-property, $transition-time, $method) {
     -webkit-transition: $transition-property $transition-time $method;
     -moz-transition: $transition-property $transition-time $method;
@@ -48,17 +80,58 @@ body {
 
 #home {
 		background-color: $color1;
-	}
-	#about {
-		background-color: $color2;
-	}
+		text-align: center;
+		.name {
+			font-size: 4em;
+		}
 
-	#projects {
-		background-color: $color3;
-	}
-	#contact {
-		background-color: $color4;
-	}
+		#hi {
+			display: none;
+		}
+		h2 {
+			font-size: 2em;
+		}
+		.move-choice {
+			color: white;
+			border-radius: 99px;
+			@include transition(all, .2s, ease);
+		}
+		.move-choice:hover {
+			text-shadow: .1em .1em green;
+			padding: 10px;
+			border-radius: 0px;
+		}
+}
+#about {		
+	background-color: $color2;
+}
+
+#projects {
+	background-color: $color3;
+}
+
+#contact {
+	background-color: $color4;
+}
+
+#chosen {
+	color: white;
+	border-radius: 15px;
+	border: 1px solid black;
+	box-sizing: border-box;
+	padding: 3px 5px;
+	@include transition(border-radius, .3s, ease);
+	@include transition(border, .3s, ease);
+	@include transition(color, .3s, ease);
+
+}
+
+#unchosen {
+	padding: 4px 6px;	
+}
+#horizontal, #vertical, .choice {
+	cursor: pointer;
+}
 
 ul { 
 	position: fixed;
@@ -68,6 +141,16 @@ ul {
 		font-weight: 600;
 		text-decoration: none;
 		font-size: 1.4em;
+	}
+	&#scrolling-direction {
+		font-weight: bold;
+		@media screen and (max-width: 782px) {
+			display: none;
+		}
+	}
+	&#scrolling-direction li{
+		display: inline-block;
+		margin-left: 4px;
 	}
 	&#contact-info {
 		margin-top: 0px;
@@ -125,6 +208,8 @@ ul {
 		}
 	}
 } 
+
+
 
 /* rondo font files */
 @font-face {
