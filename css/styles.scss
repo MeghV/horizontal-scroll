@@ -211,7 +211,10 @@ ul {
 				padding-bottom: 25px;
 				display: block;
 				color: white;
+				&:focus {
+					outline: 0;
 				}
+			}
 		}
 	}
 } 

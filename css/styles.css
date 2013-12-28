@@ -132,6 +132,8 @@ ul {
         padding-bottom: 25px;
         display: block;
         color: white; }
+        ul#banner li a:focus {
+          outline: 0; }
 
 /* rondo font files */
 @font-face {
