@@ -1,8 +1,7 @@
 (function(window){
 	var target;
 
-	$(document).ready(function() { 
-		$("#hi").fadeIn(10000);
+	$(document).ready(function() {
 		slideChoice();
 		resizeDiv($("#home"));
 		$(".panel").each(function(){
@@ -15,6 +14,8 @@
 			event.preventDefault(); 
 			target = $(this).attr("href"); 
 			slide(setSlideTime);
+			$(this).addClass("current", 1000, "swing");
+			$("#banner li a").not($(this)).removeClass("current");
 			$("body").css("background-color", "red");
 		}); 
 	}); 
@@ -57,9 +58,15 @@
 		return time;
 	}
 
+	function slideTo(target) {
+		$("html, body").stop().animate({ 
+				scrollLeft: target.offset().left, 
+				scrollTop: target.offset().top 
+		}, 1);
+	}
 	function slideChoice() {
 		$("#vertical").click(function() {
-			$("li[data-choice='h'").attr({
+			$("li[data-choice='h']").attr({
 				"id":"unchosen"
 			});
 			$("li[data-choice='v']").attr({

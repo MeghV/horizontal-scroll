@@ -2,7 +2,7 @@ body {
   font-family: 'Lato', sans-serif;
   font-weight: normal;
   overflow: hidden;
-  background-color: #3498db; }
+  background-color: #9b59b6; }
 
 .wide {
   width: 9000px; }
@@ -70,6 +70,9 @@ body {
 
 #horizontal, #vertical, .choice {
   cursor: pointer; }
+
+.current {
+  text-shadow: .1em .1em black; }
 
 ul {
   position: fixed;
