@@ -5,7 +5,7 @@
 		$("html, body").animate({ 
 				scrollLeft: 0, 
 				scrollTop: 0
-		}, 1);
+		}, 0.1);
 		slideChoice();
 		resizeDiv($("#home"));
 		$(".panel").each(function(){
@@ -63,12 +63,6 @@
 		return time;
 	}
 
-	function slideTo(target) {
-		$("html, body").stop().animate({ 
-				scrollLeft: target.offset().left, 
-				scrollTop: target.offset().top 
-		}, 1);
-	}
 	function slideChoice() {
 		$("#vertical, li[data-choice='v']").click(function() {
 			$("li[data-choice='h']").attr({
@@ -78,10 +72,10 @@
 				"id":"chosen"
 			});
 			$(".panel").css("float","none");
-			slide(1);
+			slide(0);
 		});
 		$("#horizontal, li[data-choice='h']").click(function (){
-			$("li[data-choice='v'").attr({
+			$("li[data-choice='v']").attr({
 				"id":"unchosen"
 			});
 			$("li[data-choice='h']").attr({
