@@ -17,10 +17,20 @@ body {
   text-align: center; }
   #home .name {
     font-size: 4em; }
+  #home a {
+    color: inherit; }
   #home #hi {
     display: none; }
   #home h2 {
+    margin-right: 45px;
+    margin-left: 45px;
     font-size: 2em; }
+  #home img {
+    float: left;
+    height: 6em;
+    border-radius: 99px;
+    margin-left: 1.3em;
+    margin-right: .2em; }
   #home .move-choice {
     color: white;
     border-radius: 99px;
@@ -66,7 +76,15 @@ body {
   transition: color 0.3s ease; }
 
 #unchosen {
-  padding: 4px 6px; }
+  padding: 4px 6px;
+  -webkit-transition: text-shadow 0.3s ease;
+  -moz-transition: text-shadow 0.3s ease;
+  -ms-transition: text-shadow 0.3s ease;
+  -o-transition: text-shadow 0.3s ease;
+  transition: text-shadow 0.3s ease; }
+
+#unchosen:hover {
+  text-shadow: .12em .12em green; }
 
 #horizontal, #vertical, .choice {
   cursor: pointer; }
@@ -83,6 +101,7 @@ ul {
     text-decoration: none;
     font-size: 1.4em; }
   ul#scrolling-direction {
+    margin-top: .3em;
     z-index: 1000;
     font-weight: bold; }
     @media screen and (max-width: 768px) {
@@ -285,11 +304,11 @@ ul {
 .icon-twitter {
   color: #00E; }
   .icon-twitter:before {
-    -webkit-transition: all 0.5s ease;
-    -moz-transition: all 0.5s ease;
-    -ms-transition: all 0.5s ease;
-    -o-transition: all 0.5s ease;
-    transition: all 0.5s ease;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
     border-radius: 150px;
     font-weight: lighter; }
   .icon-twitter:hover:before {
@@ -299,11 +318,11 @@ ul {
 .icon-facebook {
   color: #00E; }
   .icon-facebook:before {
-    -webkit-transition: all 0.5s ease;
-    -moz-transition: all 0.5s ease;
-    -ms-transition: all 0.5s ease;
-    -o-transition: all 0.5s ease;
-    transition: all 0.5s ease;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
     border-radius: 150px;
     font-weight: lighter; }
   .icon-facebook:hover:before {
@@ -313,11 +332,11 @@ ul {
 .icon-github {
   color: #00E; }
   .icon-github:before {
-    -webkit-transition: all 0.5s ease;
-    -moz-transition: all 0.5s ease;
-    -ms-transition: all 0.5s ease;
-    -o-transition: all 0.5s ease;
-    transition: all 0.5s ease;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
     border-radius: 150px;
     font-weight: lighter; }
   .icon-github:hover:before {
@@ -327,11 +346,11 @@ ul {
 .icon-linkedin {
   color: #00E; }
   .icon-linkedin:before {
-    -webkit-transition: all 0.5s ease;
-    -moz-transition: all 0.5s ease;
-    -ms-transition: all 0.5s ease;
-    -o-transition: all 0.5s ease;
-    transition: all 0.5s ease;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
     border-radius: 150px;
     font-weight: lighter; }
   .icon-linkedin:hover:before {
@@ -341,11 +360,11 @@ ul {
 .icon-email {
   color: #00E; }
   .icon-email:before {
-    -webkit-transition: all 0.5s ease;
-    -moz-transition: all 0.5s ease;
-    -ms-transition: all 0.5s ease;
-    -o-transition: all 0.5s ease;
-    transition: all 0.5s ease;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
     border-radius: 150px;
     font-weight: lighter; }
   .icon-email:hover:before {

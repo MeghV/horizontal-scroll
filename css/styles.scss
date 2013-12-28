@@ -50,7 +50,7 @@ $color4: #e74c3c;
 	.icon-#{$icon} {
 		color: #00E;
 		&:before {
-			@include transition(all, .5s, ease);
+			@include transition(all, .3s, ease);
 			border-radius: 150px;
 			font-weight: lighter;
 		}
@@ -85,12 +85,23 @@ body {
 		.name {
 			font-size: 4em;
 		}
-
+		a {
+			color: inherit;
+		}
 		#hi {
 			display: none;
 		}
 		h2 {
+			margin-right: 45px;
+			margin-left: 45px;
 			font-size: 2em;
+		}
+		img {
+			float: left;
+			height: 6em;
+			border-radius: 99px;
+			margin-left: 1.3em;
+			margin-right: .2em;
 		}
 		.move-choice {
 			color: white;
@@ -128,7 +139,12 @@ body {
 }
 
 #unchosen {
-	padding: 4px 6px;	
+	padding: 4px 6px;
+	@include transition(text-shadow, .3s, ease);
+}
+
+#unchosen:hover {
+	text-shadow: .12em .12em green;
 }
 #horizontal, #vertical, .choice {
 	cursor: pointer;
@@ -148,6 +164,7 @@ ul {
 		font-size: 1.4em;
 	}
 	&#scrolling-direction {
+		margin-top: .3em;
 		z-index: 1000;
 		font-weight: bold;
 		@media screen and (max-width: 768px) {

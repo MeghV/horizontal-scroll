@@ -1,6 +1,6 @@
 (function(window){
 	var target;
-
+	var exclamations = ["Beautiful", "Cool", "Great", "Awesome", "Perfect", "Sweet", "Hurrah", "Woo"];
 	$(document).ready(function() {
 		$("html, body").animate({ 
 				scrollLeft: 0, 
@@ -46,10 +46,13 @@
 	}
 
 	function slide(time) {
-		$("html, body").stop().animate({ 
+		if($(target).offset() !== undefined) {
+			$("html, body").stop().animate({ 
 				scrollLeft: $(target).offset().left, 
 				scrollTop: $(target).offset().top 
-		}, time);
+			}, time);	
+		}
+		
 	}
 
 	function setSlideTime() {
@@ -64,7 +67,9 @@
 	}
 
 	function slideChoice() {
+		var rand;
 		$("#vertical, li[data-choice='v']").click(function() {
+			rand = Math.floor(Math.random()*exclamations.length);
 			$("li[data-choice='h']").attr({
 				"id":"unchosen"
 			});
@@ -72,9 +77,13 @@
 				"id":"chosen"
 			});
 			$(".panel").css("float","none");
+			$("#direction-question").slideUp(function() {
+				$(this).html(exclamations[rand] + ". Let's go down!").slideDown();
+			});
 			slide(0);
 		});
 		$("#horizontal, li[data-choice='h']").click(function (){
+			rand = Math.floor(Math.random()*exclamations.length);
 			$("li[data-choice='v']").attr({
 				"id":"unchosen"
 			});
@@ -82,6 +91,9 @@
 				"id":"chosen"
 			});
 			$(".panel").css("float", "left");
+			$("#direction-question").slideUp(function() {
+				$(this).html(exclamations[rand] + ". Let's go right!").slideDown();
+			});
 			slide(0);
 		})
 	}
