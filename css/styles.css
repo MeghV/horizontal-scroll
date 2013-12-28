@@ -83,13 +83,15 @@ ul {
     text-decoration: none;
     font-size: 1.4em; }
   ul#scrolling-direction {
+    z-index: 1000;
     font-weight: bold; }
     @media screen and (max-width: 782px) {
       ul#scrolling-direction {
         display: none; } }
   ul#scrolling-direction li {
     display: inline-block;
-    margin-left: 4px; }
+    margin-left: 4px;
+    cursor: pointer; }
   ul#contact-info {
     margin-top: 0px;
     margin-bottom: 0px;
@@ -281,7 +283,8 @@ ul {
     -ms-transition: all 0.5s ease;
     -o-transition: all 0.5s ease;
     transition: all 0.5s ease;
-    border-radius: 150px; }
+    border-radius: 150px;
+    font-weight: lighter; }
   .icon-twitter:hover:before {
     background-color: #55acee;
     color: #f5f8fa; }
@@ -294,7 +297,8 @@ ul {
     -ms-transition: all 0.5s ease;
     -o-transition: all 0.5s ease;
     transition: all 0.5s ease;
-    border-radius: 150px; }
+    border-radius: 150px;
+    font-weight: lighter; }
   .icon-facebook:hover:before {
     background-color: #4c66a4;
     color: white; }
@@ -307,7 +311,8 @@ ul {
     -ms-transition: all 0.5s ease;
     -o-transition: all 0.5s ease;
     transition: all 0.5s ease;
-    border-radius: 150px; }
+    border-radius: 150px;
+    font-weight: lighter; }
   .icon-github:hover:before {
     background-color: #171515;
     color: #f3f3f3; }
@@ -320,7 +325,8 @@ ul {
     -ms-transition: all 0.5s ease;
     -o-transition: all 0.5s ease;
     transition: all 0.5s ease;
-    border-radius: 150px; }
+    border-radius: 150px;
+    font-weight: lighter; }
   .icon-linkedin:hover:before {
     background-color: #0e76a8;
     color: white; }
@@ -333,7 +339,8 @@ ul {
     -ms-transition: all 0.5s ease;
     -o-transition: all 0.5s ease;
     transition: all 0.5s ease;
-    border-radius: 150px; }
+    border-radius: 150px;
+    font-weight: lighter; }
   .icon-email:hover:before {
     background-color: #dd1812;
     color: white; }

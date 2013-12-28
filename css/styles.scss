@@ -52,6 +52,7 @@ $color4: #e74c3c;
 		&:before {
 			@include transition(all, .5s, ease);
 			border-radius: 150px;
+			font-weight: lighter;
 		}
 		&:hover:before{
 
@@ -147,6 +148,7 @@ ul {
 		font-size: 1.4em;
 	}
 	&#scrolling-direction {
+		z-index: 1000;
 		font-weight: bold;
 		@media screen and (max-width: 782px) {
 			display: none;
@@ -155,6 +157,7 @@ ul {
 	&#scrolling-direction li{
 		display: inline-block;
 		margin-left: 4px;
+		cursor: pointer;
 	}
 	&#contact-info {
 		margin-top: 0px;
