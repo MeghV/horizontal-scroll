@@ -85,7 +85,7 @@ ul {
   ul#scrolling-direction {
     z-index: 1000;
     font-weight: bold; }
-    @media screen and (max-width: 782px) {
+    @media screen and (max-width: 768px) {
       ul#scrolling-direction {
         display: none; } }
   ul#scrolling-direction li {
@@ -131,7 +131,12 @@ ul {
       ul#banner li a {
         padding-bottom: 25px;
         display: block;
-        color: white; }
+        color: white;
+        -webkit-transition: text-shadow 0.3s ease;
+        -moz-transition: text-shadow 0.3s ease;
+        -ms-transition: text-shadow 0.3s ease;
+        -o-transition: text-shadow 0.3s ease;
+        transition: text-shadow 0.3s ease; }
         ul#banner li a:focus {
           outline: 0; }
 

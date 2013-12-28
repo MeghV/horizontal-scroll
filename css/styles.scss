@@ -150,7 +150,7 @@ ul {
 	&#scrolling-direction {
 		z-index: 1000;
 		font-weight: bold;
-		@media screen and (max-width: 782px) {
+		@media screen and (max-width: 768px) {
 			display: none;
 		}
 	}
@@ -211,6 +211,7 @@ ul {
 				padding-bottom: 25px;
 				display: block;
 				color: white;
+				@include transition(text-shadow, .3s, ease);
 				&:focus {
 					outline: 0;
 				}
