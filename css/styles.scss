@@ -63,6 +63,7 @@ $color4: #e74c3c;
 }
 
 body {
+	font-size: 12px;
 	font-family: 'Lato', sans-serif;
 	font-weight: normal;
 	overflow: hidden;
@@ -95,9 +96,7 @@ body {
 			font-size: 1.8em;
 		}
 		#direction-question {
-			font-size: 1em;
-			margin-top: 1em;
-			margin-bottom: 0;
+			display: none;
 		}	
 		a {
 			color: inherit;
@@ -168,6 +167,9 @@ ul {
 	position: fixed;
 	text-align: center;
 	padding: 0;
+	.fixed-info {
+		background-color: $color1;
+	}
 	a {
 		font-weight: 600;
 		text-decoration: none;

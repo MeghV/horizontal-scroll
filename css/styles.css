@@ -1,4 +1,5 @@
 body {
+  font-size: 12px;
   font-family: 'Lato', sans-serif;
   font-weight: normal;
   overflow: hidden;
@@ -25,9 +26,7 @@ body {
     margin: .1em .2em;
     font-size: 1.8em; }
   #home #direction-question {
-    font-size: 1em;
-    margin-top: 1em;
-    margin-bottom: 0; }
+    display: none; }
   #home a {
     color: inherit; }
   #home #hi {
@@ -103,6 +102,8 @@ ul {
   position: fixed;
   text-align: center;
   padding: 0; }
+  ul .fixed-info {
+    background-color: #9b59b6; }
   ul a {
     font-weight: 600;
     text-decoration: none;
