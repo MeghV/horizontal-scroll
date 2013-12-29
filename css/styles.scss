@@ -83,18 +83,27 @@ body {
 		background-color: $color1;
 		text-align: center;
 		.name {
-			font-size: 4em;
+			font-size: 2em;
+			margin-top: 0.5em;
+			@media screen and (min-width: 768px) {
+				font-size: 4em;
+			}
 		}
+
+		.desc {
+			margin: .1em .2em;
+			font-size: 1.8em;
+		}
+		#direction-question {
+			font-size: 1em;
+			margin-top: 1em;
+			margin-bottom: 0;
+		}	
 		a {
 			color: inherit;
 		}
 		#hi {
 			display: none;
-		}
-		h2 {
-			margin-right: 45px;
-			margin-left: 45px;
-			font-size: 2em;
 		}
 		img {
 			float: left;
@@ -154,6 +163,7 @@ body {
 	text-shadow: .1em .1em black;
 }
 
+
 ul { 
 	position: fixed;
 	text-align: center;
@@ -164,11 +174,12 @@ ul {
 		font-size: 1.4em;
 	}
 	&#scrolling-direction {
-		margin-top: .3em;
+		display: none;
+		margin-top: 0.3em;
 		z-index: 1000;
 		font-weight: bold;
-		@media screen and (max-width: 768px) {
-			display: none;
+		@media screen and (min-width: 768px) {
+			display: block;
 		}
 	}
 	&#scrolling-direction li{

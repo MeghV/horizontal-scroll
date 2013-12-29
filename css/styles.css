@@ -16,15 +16,22 @@ body {
   background-color: #9b59b6;
   text-align: center; }
   #home .name {
-    font-size: 4em; }
+    font-size: 2em;
+    margin-top: 0.5em; }
+    @media screen and (min-width: 768px) {
+      #home .name {
+        font-size: 4em; } }
+  #home .desc {
+    margin: .1em .2em;
+    font-size: 1.8em; }
+  #home #direction-question {
+    font-size: 1em;
+    margin-top: 1em;
+    margin-bottom: 0; }
   #home a {
     color: inherit; }
   #home #hi {
     display: none; }
-  #home h2 {
-    margin-right: 45px;
-    margin-left: 45px;
-    font-size: 2em; }
   #home img {
     float: left;
     height: 6em;
@@ -101,12 +108,13 @@ ul {
     text-decoration: none;
     font-size: 1.4em; }
   ul#scrolling-direction {
-    margin-top: .3em;
+    display: none;
+    margin-top: 0.3em;
     z-index: 1000;
     font-weight: bold; }
-    @media screen and (max-width: 768px) {
+    @media screen and (min-width: 768px) {
       ul#scrolling-direction {
-        display: none; } }
+        display: block; } }
   ul#scrolling-direction li {
     display: inline-block;
     margin-left: 4px;
