@@ -9,8 +9,8 @@ body {
   width: 9000px; }
 
 .panel {
-  padding-top: 50px;
   float: left;
+  padding-top: 50px;
   display: none; }
 
 #home {
@@ -130,7 +130,7 @@ ul {
       margin-left: 10px; }
       ul#contact-info li a {
         color: black;
-        font-size: 45px;
+        font-size: 2.9167em;
         margin: 0; }
         ul#contact-info li a[href^="mailto:"] {
           color: black; }
@@ -157,7 +157,7 @@ ul {
       ul#banner li:nth-child(4) {
         background-color: #e74c3c; }
       ul#banner li a {
-        padding-bottom: 25px;
+        padding-bottom: 1.25em;
         display: block;
         color: white;
         -webkit-transition: text-shadow 0.3s ease;
