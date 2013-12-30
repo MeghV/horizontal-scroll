@@ -22,7 +22,7 @@ body {
         font-size: 4em; } }
   #home .desc {
     margin: .1em .2em;
-    font-size: 2em;
+    font-size: 1.8em;
     -webkit-transition: font-size 0.4s ease;
     -moz-transition: font-size 0.4s ease;
     -ms-transition: font-size 0.4s ease;
