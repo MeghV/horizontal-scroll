@@ -1,5 +1,5 @@
 $tiles: 3;
-$font-size: 12px;
+$font-size: 12;
 $color1: #9b59b6;
 $color2: #3498db;
 $color3: #e67e22;
@@ -62,20 +62,20 @@ $color4: #e74c3c;
 	}
 }
 
+html, body {
+	overflow: hidden;
+}
 body {
-	font-size: $font-size;
+	font-size: $font-size + px;
 	font-family: 'Lato', sans-serif;
 	font-weight: normal;
-	overflow: hidden;
 	background-color: $color1;
 }
 
 .wide { 
-	width: 9000px;
 } 
 
 .panel {
-	float: left;
 	padding-top: 50px;
 	display: none;
 } 
@@ -199,7 +199,7 @@ ul {
 			margin-left: 10px;
 			a {
 				color: black;
-				font-size: 2.9167em;
+				font-size: 45/$font-size + em;
 				margin: 0;
 				&[href^="mailto:"] {
 					color: black;

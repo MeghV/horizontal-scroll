@@ -1,7 +1,18 @@
 (function(window){
+	var currW = $(this).width();
+	var currH = $(this).height();
 	var target;
+	var descFont = parseInt($(".desc").css("font-size"));
 	var exclamations = ["Beautiful", "Cool", "Great", "Awesome", "Perfect", "Sweet", "Hurrah", "Woo"];
+	var previousDescBottom = $(".desc").offset().top + $(".desc").height() + parseInt($(".desc").css("margin"));
+	var previousContactTop;
 	$(document).ready(function() {
+		console.log("curr h is " + currH);
+		$(".wide").css("width", $(this).width + "px");
+		$(".panel").css("height", $(this).height + "px");
+		console.log($(".wide").css("width"));
+		$(".panel").css("width", $(this).width / 4 + "px");
+		console.log($(".panel").css("width"));
 		$("html, body").animate({ 
 				scrollLeft: 0, 
 				scrollTop: 0
@@ -23,11 +34,18 @@
 			var color = $(target).css('background-color')
 			$("body").css("background-color", color);
 		}); 
+		changeFont();
 	}); 
 
 	this.onresize = function(event) {
+		if($(window).height() > currH) {
+			descFont = descFont + .5;
+		} 
+		currH = $(window).height();
+		console.log("new H is " + $(window).height());
+		changeFont();
 		var width = $(this).width();
-		$(".wide").css("width", width * 4 + "px");
+		// $(".wide").css("width", width * 4 + "px");
 		console.log(width * 4);
 		resizeDiv($("#home"));
 		resizeDiv($("#about"));
@@ -36,6 +54,19 @@
 		slide(0);	
 	}
 
+	function changeFont() {
+		var descBottom = $(".desc").offset().top + 
+					 $(".desc").height() + 
+					 parseInt($(".desc").css("margin"));
+		console.log("desc bottom is " + descBottom);
+		var contact = $("#banner").offset().top;
+		console.log("banner top is " + contact);
+		console.log("font is " + descFont);
+		if(descBottom > contact) {
+			descFont = descFont - 1.5;
+		} 
+		$(".desc").css("font-size", descFont + "px");
+	}
 	function resizeDiv(div) {
 		vpw = $(this).width();
 		vph = $(this).height();
