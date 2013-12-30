@@ -49,7 +49,7 @@
 					 parseInt($(".desc").css("margin"));
 		var contact = $("#banner").offset().top;
 		if(descBottom > contact && descFont > 14) {
-			descFont = descFont - 1.4;
+			descFont = descFont - 1.3;
 		    $(".desc").css("font-size", descFont + "px");
 		} else if(contact > descBottom + 25) {
 			descFont = descFont + 0.1;

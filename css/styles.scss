@@ -1,10 +1,10 @@
 $tiles: 3;
-$font-size: 13;
+$font-size: 12;
 $color1: #9b59b6;
 $color2: #3498db;
 $color3: #e67e22;
 $color4: #e74c3c;
-$mediumbp: (600/13) + em;
+$mediumbp: (600/$font-size) + em;
 //mixins
 
 @mixin animation($animate...) {
