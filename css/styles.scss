@@ -95,7 +95,7 @@ body {
 		.desc {
 			margin: .1em .2em;
 			@media screen and (max-width: $mediumbp) {
-				font-size: 1.8em;
+				font-size: 1.5em;
 			}
 			@include transition(font-size, .4s, ease);
 			@media screen and (min-width: $mediumbp) {
