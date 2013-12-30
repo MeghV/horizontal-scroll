@@ -2,7 +2,7 @@ html, body {
   overflow: hidden; }
 
 body {
-  font-size: 12px;
+  font-size: 14px;
   font-family: 'Lato', sans-serif;
   font-weight: normal;
   background-color: #9b59b6; }
@@ -128,7 +128,7 @@ ul {
       margin-left: 10px; }
       ul#contact-info li a {
         color: black;
-        font-size: 3.75em;
+        font-size: 3.21429em;
         margin: 0; }
         ul#contact-info li a[href^="mailto:"] {
           color: black; }
