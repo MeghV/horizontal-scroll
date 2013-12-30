@@ -1,35 +1,33 @@
 (function(window){
-	var currW = $(this).width();
-	var currH = $(this).height();
 	var target;
 	var descFont = parseInt($(".desc").css("font-size"));
 	var exclamations = ["Beautiful", "Cool", "Great", "Awesome", "Perfect", "Sweet", "Hurrah", "Woo"];
 	var previousDescBottom = $(".desc").offset().top + $(".desc").height() + parseInt($(".desc").css("margin"));
 	var previousContactTop;
 	$(document).ready(function() {
-		$(".wide").css("width", $(this).width + "px");
-		$(".panel").css("height", $(this).height + "px");
-		console.log($(".wide").css("width"));
-		$(".panel").css("width", $(this).width / 4 + "px");
-		console.log($(".panel").css("width"));
-		$("html, body").animate({ 
-				scrollLeft: 0, 
-				scrollTop: 0
-		}, 0.1);
+		var left;
+		$(window).animate({
+		    'pageXOffset': 0,
+		    'pageYOffset': 0
+		}, {
+		    duration: 0.1,
+		    easing: 'swing',
+		    step: function(now, fx) {
+		        if (fx.prop == 'pageXOffset') {
+		            left = now;
+		        } else if (fx.prop == 'pageYOffset') {
+		            window.scrollTo(left, now);
+		        }
+		    }
+		});
 		slideChoice();
-		resizeDiv($("#home"));
-		$(".panel").each(function(){
-			$(this).css("display", "block");
-		})
-		resizeDiv($("#about"));
-		resizeDiv($("#projects"));
-		resizeDiv($("#contact"));
+		resizeDiv();
 		$("#banner a").bind("click",function(event){ 
 			event.preventDefault(); 
 			target = $(this).attr("href"); 
 			slide(setSlideTime);
-			$(this).addClass("current", 1000, "swing");
 			$("#banner li a").not($(this)).removeClass("current");
+			$(this).addClass("current");
 			var color = $(target).css('background-color')
 			$("body").css("background-color", color);
 		}); 
@@ -37,42 +35,31 @@
 	}); 
 
 	this.onresize = function(event) {
-		if($(window).height() > currH) {
-			descFont = descFont + 0.5;
-		} 
-		currH = $(window).height();
-		console.log("new H is " + $(window).height());
-		var width = $(this).width();
-		// $(".wide").css("width", width * 4 + "px");
-		console.log(width * 4);
-		resizeDiv($("#home"));
-		resizeDiv($("#about"));
-		resizeDiv($("#projects"));
-		resizeDiv($("#contact"));
-		slide(0);	
-		changeFont();
+		event.preventDefault();
+		resizeDiv();
+		slide(0);
+		if($(window).width() < 600) {
+			changeFont(); 
+		}	
 	}
 
 	function changeFont() {
 		var descBottom = $(".desc").offset().top + 
 					 $(".desc").height() + 
 					 parseInt($(".desc").css("margin"));
-		console.log("desc bottom is " + descBottom);
 		var contact = $("#banner").offset().top;
-		console.log("banner top is " + contact);
-		console.log("font is " + descFont);
 		if(descBottom > contact && descFont > 14) {
-			descFont = descFont - 1;
-			if(descBottom > contact && descFont > 14) {
-				descFont = descFont - .5;
-			}
-		} 
-		$(".desc").css("font-size", descFont + "px");
+			descFont = descFont - .8;
+		    $(".desc").css("font-size", descFont + "px");
+		} else if(contact > descBottom + 25) {
+			descFont = descFont + 0.1;
+			$(".desc").css("font-size", descFont + "px");
+		}
 	}
-	function resizeDiv(div) {
-		vpw = $(this).width();
-		vph = $(this).height();
-		$(div).css({
+	function resizeDiv() {
+		var vpw = $(this).width();
+		var vph = $(this).height();
+		$(".panel").css({
 			"height": vph + "px",
 			"width": vpw + "px"
 		});

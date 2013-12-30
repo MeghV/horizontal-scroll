@@ -4,6 +4,7 @@ $color1: #9b59b6;
 $color2: #3498db;
 $color3: #e67e22;
 $color4: #e74c3c;
+$mediumbp: (600/14) + em;
 //mixins
 
 @mixin animation($animate...) {
@@ -62,22 +63,21 @@ $color4: #e74c3c;
 	}
 }
 
-html, body {
-	overflow: hidden;
-}
 body {
+	overflow: hidden;
 	font-size: $font-size + px;
 	font-family: 'Lato', sans-serif;
 	font-weight: normal;
 	background-color: $color1;
 }
 
-.wide { 
+.wide {
+	width: 9000px;
 } 
 
 .panel {
-	padding-top: 50px;
-	display: none;
+	float: left;
+	padding-top: (55/12) + em;
 } 
 
 #home {
@@ -85,7 +85,8 @@ body {
 		text-align: center;
 		.name {
 			font-size: 2em;
-			margin-top: 0.5em;
+			margin-top: 0;
+			margin-bottom: 0.5em;
 			@media screen and (min-width: 768px) {
 				font-size: 4em;
 			}
@@ -93,11 +94,20 @@ body {
 
 		.desc {
 			margin: .1em .2em;
-			font-size: 1.8em;
+			@media screen and (max-width: $mediumbp) {
+				font-size: 1.8em;
+			}
 			@include transition(font-size, .4s, ease);
+			@media screen and (min-width: $mediumbp) {
+				font-size: 2.7em; 
+			}
 		}
 		#direction-question {
 			display: none;
+			@media screen and (min-width: $mediumbp) {
+				display: block; 
+				margin-top: 3.3em;
+			}
 		}	
 		a {
 			color: inherit;
@@ -243,6 +253,7 @@ ul {
 				display: block;
 				color: white;
 				@include transition(text-shadow, .3s, ease);
+				font-size: 1em;
 				&:focus {
 					outline: 0;
 				}

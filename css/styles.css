@@ -1,35 +1,46 @@
-html, body {
-  overflow: hidden; }
-
 body {
+  overflow: hidden;
   font-size: 14px;
   font-family: 'Lato', sans-serif;
   font-weight: normal;
   background-color: #9b59b6; }
 
+.wide {
+  width: 9000px; }
+
 .panel {
-  padding-top: 50px;
-  display: none; }
+  float: left;
+  padding-top: 4.58333em; }
 
 #home {
   background-color: #9b59b6;
   text-align: center; }
   #home .name {
     font-size: 2em;
-    margin-top: 0.5em; }
+    margin-top: 0;
+    margin-bottom: 0.5em; }
     @media screen and (min-width: 768px) {
       #home .name {
         font-size: 4em; } }
   #home .desc {
     margin: .1em .2em;
-    font-size: 1.8em;
     -webkit-transition: font-size 0.4s ease;
     -moz-transition: font-size 0.4s ease;
     -ms-transition: font-size 0.4s ease;
     -o-transition: font-size 0.4s ease;
     transition: font-size 0.4s ease; }
+    @media screen and (max-width: 42.85714em) {
+      #home .desc {
+        font-size: 1.8em; } }
+    @media screen and (min-width: 42.85714em) {
+      #home .desc {
+        font-size: 2.7em; } }
   #home #direction-question {
     display: none; }
+    @media screen and (min-width: 42.85714em) {
+      #home #direction-question {
+        display: block;
+        margin-top: 3.3em; } }
   #home a {
     color: inherit; }
   #home #hi {
@@ -167,7 +178,8 @@ ul {
         -moz-transition: text-shadow 0.3s ease;
         -ms-transition: text-shadow 0.3s ease;
         -o-transition: text-shadow 0.3s ease;
-        transition: text-shadow 0.3s ease; }
+        transition: text-shadow 0.3s ease;
+        font-size: 1em; }
         ul#banner li a:focus {
           outline: 0; }
 
