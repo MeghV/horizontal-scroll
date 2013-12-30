@@ -93,7 +93,8 @@ body {
 
 		.desc {
 			margin: .1em .2em;
-			font-size: 1.8em;
+			font-size: 2em;
+			@include transition(font-size, .4s, ease);
 		}
 		#direction-question {
 			display: none;

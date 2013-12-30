@@ -7,7 +7,6 @@
 	var previousDescBottom = $(".desc").offset().top + $(".desc").height() + parseInt($(".desc").css("margin"));
 	var previousContactTop;
 	$(document).ready(function() {
-		console.log("curr h is " + currH);
 		$(".wide").css("width", $(this).width + "px");
 		$(".panel").css("height", $(this).height + "px");
 		console.log($(".wide").css("width"));
@@ -39,11 +38,10 @@
 
 	this.onresize = function(event) {
 		if($(window).height() > currH) {
-			descFont = descFont + .5;
+			descFont = descFont + 0.5;
 		} 
 		currH = $(window).height();
 		console.log("new H is " + $(window).height());
-		changeFont();
 		var width = $(this).width();
 		// $(".wide").css("width", width * 4 + "px");
 		console.log(width * 4);
@@ -52,6 +50,7 @@
 		resizeDiv($("#projects"));
 		resizeDiv($("#contact"));
 		slide(0);	
+		changeFont();
 	}
 
 	function changeFont() {
@@ -62,8 +61,11 @@
 		var contact = $("#banner").offset().top;
 		console.log("banner top is " + contact);
 		console.log("font is " + descFont);
-		if(descBottom > contact) {
-			descFont = descFont - 1.5;
+		if(descBottom > contact && descFont > 14) {
+			descFont = descFont - 1;
+			if(descBottom > contact && descFont > 14) {
+				descFont = descFont - .5;
+			}
 		} 
 		$(".desc").css("font-size", descFont + "px");
 	}
@@ -91,7 +93,7 @@
 		if($(this).width() > 768) {
 			time = 1200;
 		} else {
-			time = 800;
+			time = 600;
 		}
 		console.log(time);
 		return time;
